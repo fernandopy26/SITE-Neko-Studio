@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0618" />
+
+  <title>Neko Studio — Sistemas, automações e soluções digitais</title>
+  <meta name="description" content="A Neko Studio desenvolve sistemas, sites, automações e produtos digitais sob medida. Transformamos ideias em soluções modernas, úteis e acessíveis." />
+  <meta name="author" content="Neko Studio" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Neko Studio" />
+  <meta property="og:description" content="Sistemas, automações e soluções digitais sob medida." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <link rel="alternate icon" type="image/svg+xml" href="assets/images/logo.svg" />
+  <link rel="apple-touch-icon" href="assets/images/logo.png" />
+</head>
+<body>
+
+  <!-- ============== INTRO LOADER (animação de entrada) ============== -->
+  <!-- Pode ser pulado com clique ou tecla Esc/Enter/Espaço. -->
+  <!-- Respeita "prefers-reduced-motion" automaticamente. -->
+  <div id="intro-loader" class="intro-loader" aria-hidden="true" aria-label="Carregando">
+    <div class="intro-content">
+      <div class="intro-glow"></div>
+      <div class="intro-cat-float">
+        <svg class="intro-cat-svg" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <filter id="introNeonGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.5" result="b1"/>
+              <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b2"/>
+              <feMerge>
+                <feMergeNode in="b2"/>
+                <feMergeNode in="b1"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <linearGradient id="introNeonColor" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#bdfaff"/>
+              <stop offset="100%" stop-color="#7de8f7"/>
+            </linearGradient>
+          </defs>
+
+          <g stroke="url(#introNeonColor)" stroke-width="5" fill="none"
+             stroke-linecap="round" stroke-linejoin="round" filter="url(#introNeonGlow)">
+
+            <!-- Contorno aberto da cabeca e orelhas, baseado no logo de referencia. -->
+            <path class="trace" pathLength="1"
+                  d="M 80,176
+                     C 60,170 49,154 47,136
+                     C 46,122 49,108 53,99
+                     C 45,80 46,57 56,41
+                     C 58,37 62,37 69,40
+                     C 79,44 91,53 97,68"/>
+            <path class="trace" pathLength="1"
+                  d="M 72,83
+                     C 86,70 102,64 120,64
+                     C 138,64 154,70 168,83"/>
+            <path class="trace" pathLength="1"
+                  d="M 143,68
+                     C 149,53 161,44 171,40
+                     C 178,37 182,37 184,41
+                     C 194,57 195,80 187,99
+                     C 191,108 194,122 193,136
+                     C 191,154 180,170 160,176"/>
+
+            <!-- Bigodes curtos e arredondados, como no neon original. -->
+            <path class="trace" pathLength="1" d="M 28,126 C 40,125 52,126 62,130"/>
+            <path class="trace" pathLength="1" d="M 32,140 C 43,139 53,138 62,138"/>
+            <path class="trace" pathLength="1" d="M 178,130 C 188,126 200,125 212,126"/>
+            <path class="trace" pathLength="1" d="M 178,138 C 187,138 197,139 208,140"/>
+
+            <!-- Olhos FECHADOS (crescente feliz, igual ao logo) -->
+            <g class="eyes-closed">
+              <path d="M 68,115 C 79,109 94,111 100,122"/>
+              <path d="M 140,122 C 146,111 161,109 172,115"/>
+            </g>
+
+            <!-- Olhos ABERTOS (oval brilhante) -->
+            <g class="eyes-open" fill="#bdfaff" stroke="#bdfaff" stroke-width="1.5">
+              <ellipse cx="84" cy="117" rx="5" ry="7"/>
+              <ellipse cx="156" cy="117" rx="5" ry="7"/>
+            </g>
+
+            <!-- Nariz + boca (aparecem depois do desenho) -->
+            <g class="face">
+              <path fill="url(#introNeonColor)" stroke="none"
+                    d="M 111,136
+                       C 113,132 127,132 129,136
+                       C 129,141 124,144 120,145
+                       C 116,144 111,141 111,136 Z"/>
+              <path d="M 120,144 C 119,155 108,159 100,148"/>
+              <path d="M 120,144 C 121,155 132,159 140,148"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="intro-particles" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- ============== NAVBAR ============== -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#top" class="navbar-brand">
+        <span class="brand-mark"><img src="assets/images/logo.png" alt="Neko Studio" onerror="this.onerror=null;this.src='assets/images/logo.svg';"></span>
+        <span>Neko <span style="color: var(--neon-pink-soft)">Studio</span></span>
+      </a>
+
+      <nav class="navbar-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#roadmap">Em desenvolvimento</a>
+        <a href="#sob-demanda">Sob demanda</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="navbar-cta">
+        <a class="btn btn-secondary btn-sm" data-action="whatsapp" href="#contato">Fale conosco</a>
+        <button class="menu-toggle" aria-label="Menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============== HERO ============== -->
+  <section class="hero" id="top">
+    <div class="hero-orb purple"></div>
+    <div class="hero-orb pink"></div>
+    <div class="hero-orb blue"></div>
+
+    <div class="container hero-content reveal">
+      <span class="hero-badge">
+        <span class="dot"></span>
+        Estúdio digital em construção — aceitando projetos
+      </span>
+
+      <h1 class="hero-title">
+        Transformamos ideias em <span class="gradient-text">soluções digitais</span> modernas.
+      </h1>
+
+      <p class="hero-subtitle">
+        A Neko Studio cria sistemas, sites e automações sob medida — com foco em entregar
+        ferramentas úteis, bonitas e acessíveis para quem está começando a digitalizar seu negócio.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#produtos" class="btn btn-primary">Ver produtos</a>
+        <a href="#contato" class="btn btn-secondary">Entrar em contato</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== SOBRE ============== -->
+  <section id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <span class="section-eyebrow">Sobre nós</span>
+          <h2 class="section-title">Um estúdio digital novo, com propósito claro.</h2>
+          <p>
+            A <strong>Neko Studio</strong> é um estúdio independente focado em desenvolver
+            sistemas, sites, automações e produtos digitais para pequenos e médios negócios,
+            profissionais e ideias que estão começando.
+          </p>
+          <p>
+            Estamos em fase inicial e fazemos questão de ser honestos sobre isso: cada projeto
+            é tratado com cuidado, analisado individualmente e desenvolvido com qualidade.
+            Sem promessas exageradas — só entregas reais.
+          </p>
+          <p>
+            Acreditamos que tecnologia bem feita não precisa ser cara nem complicada.
+            Pode ser simples, moderna e direta ao ponto.
+          </p>
+        </div>
+
+        <div class="about-stats reveal">
+          <div class="card stat-card card--purple">
+            <div class="num">2</div>
+            <div class="label">Produtos próprios em desenvolvimento</div>
+          </div>
+          <div class="card stat-card card--pink">
+            <div class="num">∞</div>
+            <div class="label">Projetos sob medida possíveis</div>
+          </div>
+          <div class="card stat-card card--blue">
+            <div class="num">100%</div>
+            <div class="label">Comunicação direta com quem desenvolve</div>
+          </div>
+          <div class="card stat-card card--purple">
+            <div class="num">2026</div>
+            <div class="label">Começando agora, crescendo com você</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PRODUTOS ============== -->
+  <section id="produtos">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin: 0 auto 56px; max-width: 720px;">
+        <span class="section-eyebrow">Produtos</span>
+        <h2 class="section-title">O que estamos construindo</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Produtos próprios em desenvolvimento e serviços disponíveis sob consulta.
+          Clique em um card para conhecer cada solução em detalhes.
+        </p>
+      </div>
+
+      <!-- Cards gerados via JS a partir de assets/js/products-data.js -->
+      <div class="products-grid reveal" id="products-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============== ROADMAP ============== -->
+  <section id="roadmap">
+    <div class="container">
+      <div class="reveal" style="margin-bottom: 56px;">
+        <span class="section-eyebrow">Em desenvolvimento</span>
+        <h2 class="section-title">Próximos passos do estúdio</h2>
+        <p class="section-subtitle">
+          Visão geral do que estamos construindo e do que vem por aí. As prioridades podem
+          ser ajustadas conforme o feedback dos primeiros usuários e clientes.
+        </p>
+      </div>
+
+      <div class="roadmap reveal" id="roadmap-list"></div>
+    </div>
+  </section>
+
+  <!-- ============== SOB DEMANDA ============== -->
+  <section id="sob-demanda">
+    <div class="container">
+      <div class="reveal" style="margin-bottom: 48px;">
+        <span class="section-eyebrow">Desenvolvimento sob demanda</span>
+        <h2 class="section-title">Como trabalhamos juntos</h2>
+        <p class="section-subtitle">
+          Cada projeto é único e analisado individualmente. O processo é direto e transparente.
+        </p>
+      </div>
+
+      <div class="process-grid reveal">
+        <div class="card process-step card--purple">
+          <div class="num">01</div>
+          <h4>Você entra em contato</h4>
+          <p>Conta o que precisa, o problema que quer resolver ou a ideia que tem em mente.</p>
+        </div>
+        <div class="card process-step card--pink">
+          <div class="num">02</div>
+          <h4>Analisamos a necessidade</h4>
+          <p>Estudamos o escopo, viabilidade técnica e o melhor caminho para o seu caso.</p>
+        </div>
+        <div class="card process-step card--blue">
+          <div class="num">03</div>
+          <h4>Elaboramos o orçamento</h4>
+          <p>Apresentamos prazo, valor e o que está incluso — sem surpresas no meio do caminho.</p>
+        </div>
+        <div class="card process-step card--purple">
+          <div class="num">04</div>
+          <h4>Desenvolvemos o projeto</h4>
+          <p>Construímos a solução com atualizações periódicas e espaço para ajustes.</p>
+        </div>
+        <div class="card process-step card--pink">
+          <div class="num">05</div>
+          <h4>Entrega, ajustes e suporte</h4>
+          <p>Acompanhamento na entrega, refinamentos e suporte conforme o que foi combinado.</p>
+        </div>
+      </div>
+
+      <div class="process-note reveal">
+        <strong>Sobre infraestrutura:</strong> recursos como VPS, hospedagem, banco de dados em nuvem
+        e demais serviços online são definidos <em>conforme a necessidade de cada projeto</em> e podem
+        ser incluídos no orçamento. Não trabalhamos com infraestrutura própria pré-montada — cada
+        solução é dimensionada para o que faz sentido para você.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CONTATO ============== -->
+  <section id="contato">
+    <div class="container">
+      <div class="reveal" style="text-align:center; margin: 0 auto 56px; max-width: 720px;">
+        <span class="section-eyebrow">Contato</span>
+        <h2 class="section-title">Vamos conversar?</h2>
+        <p class="section-subtitle" style="margin: 0 auto;">
+          Escolha o canal que preferir. Respondemos pessoalmente, sem intermediários.
+        </p>
+      </div>
+
+      <div class="contact-grid reveal">
+        <a class="card contact-card card--purple" data-action="whatsapp" href="#" target="_blank" rel="noopener">
+          <div class="ico" data-icon="whats"></div>
+          <h4>WhatsApp</h4>
+          <p>Atendimento direto e ágil pela conversa que você já usa todo dia.</p>
+          <span class="link" data-text="whatsapp"></span>
+        </a>
+
+        <a class="card contact-card card--pink" data-action="email" href="#">
+          <div class="ico" data-icon="mail"></div>
+          <h4>E-mail</h4>
+          <p>Para propostas, orçamentos ou conversas mais detalhadas.</p>
+          <span class="link" data-text="email"></span>
+        </a>
+
+        <a class="card contact-card card--blue" data-action="github" href="#" target="_blank" rel="noopener">
+          <div class="ico" data-icon="github"></div>
+          <h4>GitHub</h4>
+          <p>Veja parte do nosso trabalho e projetos open source.</p>
+          <span class="link">Acessar →</span>
+        </a>
+
+        <a class="card contact-card card--pink" data-action="instagram" href="#" target="_blank" rel="noopener">
+          <div class="ico" data-icon="insta"></div>
+          <h4>Instagram</h4>
+          <p>Acompanhe novidades e bastidores do estúdio.</p>
+          <span class="link">Seguir →</span>
+        </a>
+      </div>
+
+      <div class="contact-cta reveal">
+        <h3>Tem uma ideia? Vamos transformar em realidade.</h3>
+        <p>
+          Conte o que você precisa. Analisamos cada caso individualmente e respondemos com
+          honestidade sobre o que conseguimos entregar.
+        </p>
+        <a class="btn btn-primary" data-action="whatsapp" href="#">Iniciar conversa agora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Neko Studio. Feito com cuidado.</p>
+      <div class="footer-links">
+        <a href="#produtos">Produtos</a>
+        <a href="#sob-demanda">Sob demanda</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============== ASSISTENTE VIRTUAL ============== -->
+  <div class="assistant" id="assistant">
+    <div class="assistant-panel" role="dialog" aria-label="Assistente virtual">
+      <h4>Precisa de ajuda?</h4>
+      <p>Encontre a solução ideal para o que você precisa:</p>
+      <div class="assistant-options">
+        <button class="assistant-option" data-intent="contratar">Quero contratar um sistema</button>
+        <button class="assistant-option" data-intent="produtos">Quero conhecer os produtos</button>
+        <button class="assistant-option" data-intent="suporte">Quero suporte</button>
+      </div>
+    </div>
+    <button class="assistant-btn" aria-label="Abrir assistente virtual">
+      <span data-icon="chat" style="display:inline-flex;align-items:center"></span>
+      <span>Como posso ajudar?</span>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/products-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
