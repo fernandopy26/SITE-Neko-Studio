@@ -152,7 +152,7 @@ const NEKO_CONTACT = {
   whatsapp: "5581994488964",          // Substitua pelo seu número (formato internacional, só números)
   whatsappLabel: "(81) 99448-8964",   // Como aparece para o usuário
   email: "contato@nekostudio.pro",
-  github: "https://github.com/",      // Substitua pelo seu usuário do GitHub
-  instagram: "",                       // Opcional — deixe vazio para esconder
+  github: "",                          // Vazio — não exibido. Coloque a URL se quiser mostrar.
+  instagram: "https://www.instagram.com/nekostudiobr/",  // Vazio para esconder
   mensagemPadrao: "Olá! Vim pelo site da Neko Studio e gostaria de saber mais."
 };
