@@ -10,6 +10,7 @@ Construído em **HTML, CSS e JavaScript puro** — sem build, sem framework, sem
 - Animações suaves e cards com efeito glow
 - Totalmente responsivo
 - Páginas individuais para cada produto
+- Categoria **Neko Tools** com página de download para apps próprios
 - Assistente virtual flutuante com opções de contato via WhatsApp
 - Catálogo de produtos gerenciado por **um único arquivo JS** (fácil de editar)
 - Pronto para publicar no GitHub Pages
@@ -24,10 +25,15 @@ Site-NekoStudio/
 │   ├── orgah-finance.html
 │   ├── sites-personalizados.html
 │   └── automacoes.html
+├── tools/                      # Páginas da categoria Neko Tools
+│   └── ytd-neko-tools.html
+├── downloads/                  # Instaladores oficiais dos apps
+│   └── README.md
 ├── assets/
 │   ├── css/
 │   │   ├── style.css           # Estilos globais
-│   │   └── product.css         # Estilos das páginas de produto
+│   │   ├── product.css         # Estilos das páginas de produto
+│   │   └── tools.css           # Estilos da categoria Neko Tools
 │   ├── js/
 │   │   ├── products-data.js    # ⭐ Dados de produtos / roadmap / contato
 │   │   ├── main.js             # Renderização e interações da home
@@ -139,12 +145,36 @@ produto correspondente. Veja `assets/images/products/README.md` para detalhes.
 Também em `products-data.js`, no array `NEKO_ROADMAP`. Cada item tem `titulo`,
 `descricao` e `fase`.
 
-### 5. Trocar textos da home
+### 5. Adicionar / editar ferramentas da Neko Tools
+
+As ferramentas ficam no array `NEKO_TOOLS`, em `assets/js/products-data.js`.
+A página do YTD Neko Tools aponta para estes arquivos:
+
+```text
+downloads/ytd-neko-tools-pc.exe
+https://github.com/fernandopy26/SITE-Neko-Studio/releases/download/ytd-neko-tools-v0.1.1/ytd-neko-tools.apk
+```
+
+Para publicar o APK mobile, crie a release `ytd-neko-tools-v0.1.1` no GitHub
+e anexe o arquivo com o nome `ytd-neko-tools.apk`. O instalador de PC ainda
+usa `downloads/ytd-neko-tools-pc.exe`; enquanto esse arquivo não existir, a
+página exibe o botão em estado "em breve" para evitar link quebrado.
+
+A página também está pronta para três imagens do produto. Coloque os arquivos em
+`assets/images/products/` com estes nomes:
+
+```text
+ytd-neko-tools-1.png
+ytd-neko-tools-2.png
+ytd-neko-tools-3.png
+```
+
+### 6. Trocar textos da home
 
 Os textos estão diretamente no `index.html` — basta abrir e editar. Procure por
 trechos como "Sobre nós", "Como trabalhamos juntos", etc.
 
-### 6. Trocar a paleta de cores
+### 7. Trocar a paleta de cores
 
 Abra `assets/css/style.css` e edite as variáveis no topo, dentro de `:root`:
 

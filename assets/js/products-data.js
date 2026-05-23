@@ -115,6 +115,25 @@ const NEKO_PRODUCTS = [
 ];
 
 // =============================================================
+// Neko Tools — ferramentas próprias para download
+// =============================================================
+const NEKO_TOOLS = [
+  {
+    id: "ytd-neko-tools",
+    nome: "YTD Neko Tools",
+    tagline: "Baixe vídeos para assistir offline com uma experiência simples e direta.",
+    descricao:
+      "Ferramenta da Neko Tools para baixar vídeos, organizar arquivos e escolher a versão ideal para PC ou celular.",
+    status: "Primeira versão",
+    statusTipo: "beta",
+    cor: "blue",
+    icone: "download",
+    plataformas: ["PC", "Celular"],
+    link: "tools/ytd-neko-tools.html"
+  }
+];
+
+// =============================================================
 // Projetos em desenvolvimento / roadmap futuro
 // =============================================================
 const NEKO_ROADMAP = [
