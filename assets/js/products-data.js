@@ -168,8 +168,8 @@ const NEKO_ROADMAP = [
 // Informações de contato — edite aqui para mudar em todo o site
 // =============================================================
 const NEKO_CONTACT = {
-  whatsapp: "5581994488964",          // Substitua pelo seu número (formato internacional, só números)
-  whatsappLabel: "(81) 99448-8964",   // Como aparece para o usuário
+  whatsapp: "5581984852270",          // Substitua pelo seu número (formato internacional, só números)
+  whatsappLabel: "(81) 98485-2270",   // Como aparece para o usuário
   email: "contato@nekostudio.pro",
   github: "",                          // Vazio — não exibido. Coloque a URL se quiser mostrar.
   instagram: "https://www.instagram.com/nekostudiobr/",  // Vazio para esconder
